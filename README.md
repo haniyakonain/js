@@ -2,7 +2,7 @@
 
 <h2>arrow function ( => )</h2>
 
-Arrow functions provide a concise way to write function expressions in JavaScript. <br>They have a shorter syntax and lexically bind this<br>
+Arrow functions provide a concise way to write function expressions in JavaScript. <br>They have a shorter syntax and lexically bind this<br><br>
 // Regular function<br>
 function add(a, b) {<br>
   return a + b;<br>
