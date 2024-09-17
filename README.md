@@ -1,24 +1,30 @@
-# js
+ <h1>js</h1><br>
 
-arrow function ( => )
+<h2>arrow function ( => )</h2>
 
-Arrow functions provide a concise way to write function expressions in JavaScript. <br>They have a shorter syntax and lexically bind this
-// Regular function
-function add(a, b) {
-  return a + b;
-}
+Arrow functions provide a concise way to write function expressions in JavaScript. <br>They have a shorter syntax and lexically bind this<br>
+// Regular function<br>
+function add(a, b) {<br>
+  return a + b;<br>
+}<br>
 
-// Arrow function
-const add = (a, b) => a + b;
+// Arrow function<br>
+const add = (a, b) => a + b;<br>
+
+<h2>map()</h2>
+it transforms array<br>
+global function on array class <br>
+1) initial array (arr) <br>
+2) transformation function (f) <br>
+3) map (arr, f) <br>
+4)gives final output <br>
+Creates a new array with the results of calling a provided<br> function on every element in the array.<br>
+Does not change the original array.<br>
 
 
-
-map();
-Creates a new array with the results of calling a provided function on every element in the array.
-Does not change the original array.
-
-
-filter():
-
-Creates a new array with all elements that pass the test implemented by the provided function.
-The callback function should return true to keep the element, or false to discard it.
+<h2>filter()</h2>
+it transforms array<br>
+global function on array class <br>
+input can be anything number or character or string <br>
+Creates a new array with all elements that pass the test<br> implemented by the provided function.<br>
+The callback function should return true to keep the element, <br>or false to discard it.<br>
