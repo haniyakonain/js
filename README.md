@@ -30,7 +30,14 @@ datatypes- strings, numbers
 conditions- if, else
 loops- for loop
 
-  
+complex premitive
+array- array is an ordered collection of values, which can be of any data type
+objects-  an object is a collection of key-value pairs that allows you to store and organize data
+
+functions
+take arguments, does something and return an output
+functions can take another function as input(callback)
+ 
 
 <h2>arrow function ( => )</h2>
 
