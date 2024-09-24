@@ -1,4 +1,36 @@
- <h1>js</h1><br>
+<h1>js</h1><br>
+
+languages
+languages are used to write applications
+developers write high level code in languages
+and it is compiled to 0 and 1
+
+interpreted vs compiled
+
+compilers
+converts languages to o and 1
+write compile run
+dont compile if error in code
+strictly types
+interpreted
+line by line
+run partially
+dynamically typed or loosely typed
+type script
+makes js static
+
+javascript
+single threaded language_ one core at a time
+variables- value can change
+const- constant, cant change
+let- local
+var- global
+
+datatypes- strings, numbers
+conditions- if, else
+loops- for loop
+
+  
 
 <h2>arrow function ( => )</h2>
 
