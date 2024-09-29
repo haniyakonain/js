@@ -1,42 +1,44 @@
 <h1>js</h1><br>
 
-languages
-languages are used to write applications
-developers write high level code in languages
-and it is compiled to 0 and 1
+<h2>languages </h2>
+languages are used to write applications<br>
+developers write high level code in languages<br>
+and it is compiled to 0 and 1<br>
 
-interpreted vs compiled
+<h2>interpreted vs compiled</h2>
 
-compilers
-converts languages to o and 1
-write compile run
-dont compile if error in code
-strictly types
-interpreted
-line by line
-run partially
-dynamically typed or loosely typed
-type script
-makes js static
+<h3>compilers</h3>
+converts languages to o and 1<br>
+write compile run<br>
+dont compile if error in code<br>
+strictly types<br>
 
-javascript
-single threaded language_ one core at a time
-variables- value can change
-const- constant, cant change
-let- local
-var- global
+<h3>interpreted</h3>
+line by line<br>
+run partially<br>
+dynamically typed or loosely<br> typed
+type script<br>
+makes js static<br>
 
-datatypes- strings, numbers
-conditions- if, else
-loops- for loop
+<h2>javascript</h2>
+single threaded language- one core at a time<br>
+variables- value can change<br>
+const- constant, cant change<br>
+let- local<br>
+var- global<br>
+datatypes- strings, numbers<br>
+conditions- if, else<br>
+loops- for loop<br>
 
-complex premitive
-array- array is an ordered collection of values, which can be of any data type
-objects-  an object is a collection of key-value pairs that allows you to store and organize data
+<h2>complex premitive</h2>
 
-functions
-take arguments, does something and return an output
-functions can take another function as input(callback)
+<h3>array</h3><br> array is an ordered<br> collection of values, which can be of any data type<br>
+
+<h3>objects </h3> <br>an object is a collection of key-value pairs<br> that allows you to store and organize data<br>
+
+<h2>functions</h2>
+take arguments, does something and return an output<br>
+functions can take another function as input(callback)<br>
  
 
 <h2>arrow function ( => )</h2>
