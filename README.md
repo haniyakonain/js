@@ -32,9 +32,9 @@ loops- for loop<br>
 
 <h2>complex premitive</h2>
 
-<h3>array</h3><br> array is an ordered<br> collection of values, which can be of any data type<br>
+<h3>array</h3> array is an ordered<br> collection of values, which can be of any data type<br>
 
-<h3>objects </h3> <br>an object is a collection of key-value pairs<br> that allows you to store and organize data<br>
+<h3>objects </h3> an object is a collection of key-value pairs<br> that allows you to store and organize data<br>
 
 <h2>functions</h2>
 take arguments, does something and return an output<br>
