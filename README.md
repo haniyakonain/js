@@ -349,7 +349,20 @@ for (let i = 0; i < 10000000; i++) {
 }
 console.log("hi bye");
 
-        
+    function findSum(n){
+let ans= 0;
+fot(i=0; i<n; i++)
+ans +- i;
+}
+return ans;
+}
+function findSumTill100(){
+console.log(findSum(100));
+}
+//waiting
+
+setTimeout  (findSumTill100, 1000)
+console.log("hii");    
 
 
 // Arrow function<br>
