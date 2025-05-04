@@ -1,318 +1,265 @@
-<h1>js</h1><br>
+# 📘 JavaScript
 
-<h2>languages </h2>
-languages are used to write applications<br>
-developers write high level code in languages<br>
-and it is compiled to 0 and 1<br>
+---
 
-<h2>interpreted vs compiled</h2>
+## 🟨 Basics
 
-<h3>compilers</h3>
-converts languages to o and 1<br>
-write compile run<br>
-dont compile if error in code<br>
-strictly types<br>
+### 🔹 Variables
+- `var`: function-scoped (old)
+- `let`: block-scoped (modern)
+- `const`: block-scoped constant
 
-<h3>interpreted</h3>
-line by line<br>
-run partially<br>
-dynamically typed or loosely<br> typed
-type script<br>
-makes js static<br>
+```js
+let x = 5;
+const y = 10;
+````
 
-<h2>javascript</h2>
-single threaded language- one core at a time<br>
-variables- value can change<br>
-const- constant, cant change<br>
-let- local<br>
-var- global<br>
-datatypes- strings, numbers<br>
-conditions- if, else<br>
-loops- for loop<br>
+---
 
-<h2>complex premitive</h2>
+### 🔹 Data Types
 
-<h3>array</h3> array is an ordered<br> collection of values, which can be of any data type<br>
+* **Primitive**: string, number, boolean, null, undefined, symbol, bigint
+* **Non-Primitive**: objects, arrays, functions
 
-<h3>objects </h3> an object is a collection of key-value pairs<br> that allows you to store and organize data<br>
+```js
+let name = "Haniya";       // string
+let age = 21;              // number
+let isStudent = true;      // boolean
+let empty = null;          // null
+let notDefined;            // undefined
+```
 
-<h2>functions</h2>
-take arguments, does something and return an output<br>
-functions can take another function as input(callback)<br>
- 
+---
 
-<h2>arrow function ( => )</h2>
+## 🧵 String Methods
 
-Arrow functions provide a concise way to write function expressions in JavaScript. <br>They have a shorter syntax and lexically bind this<br><br>
-example- <br>// Regular function<br>
-function add(a, b) {<br>
-  return a + b;<br>
-}<br>
+```js
+let str = "JavaScript";
+```
 
-//LEVEL 1
-/////////////////STRINGS
+* `str.length` → 10
+* `str.toUpperCase()` → `"JAVASCRIPT"`
+* `str.toLowerCase()` → `"javascript"`
+* `str.indexOf("S")` → 4
+* `str.slice(0, 4)` → `"Java"`
+* `str.substring(0, 4)` → `"Java"`
+* `str.replace("Java", "Type")` → `"TypeScript"`
+* `str.includes("Script")` → true
+* `str.split("")` → `["J", "a", "v", "a", ...]`
+* `str.trim()` → removes whitespace
 
-//LENGTH
-//gives the total length not index
-/*const str="haniya";
-console.log(str.length);
+---
 
-//index
-//gives index, if word not present it gives -1
-function findIndexOf(str, target) {
-  console.log("Original String:", str);
-  console.log("Index:", str.indexOf(target));
+## 📚 Array Methods
+
+```js
+let arr = [1, 2, 3, 4];
+```
+
+* `arr.length` → 4
+* `arr.push(5)` → `[1, 2, 3, 4, 5]`
+* `arr.pop()` → `[1, 2, 3, 4]`
+* `arr.shift()` → `[2, 3, 4]`
+* `arr.unshift(0)` → `[0, 2, 3, 4]`
+* `arr.join("-")` → `"1-2-3-4"`
+* `arr.concat([5, 6])` → `[1, 2, 3, 4, 5, 6]`
+* `arr.slice(1, 3)` → `[2, 3]`
+* `arr.splice(1, 2)` → modifies array
+
+---
+
+## 🔁 Array Methods (High-order)
+
+### 🔸 map()
+
+* Creates a new array by applying a function to each element.
+
+```js
+const nums = [1, 2, 3];
+const doubled = nums.map(n => n * 2); // [2, 4, 6]
+```
+
+---
+
+### 🔸 filter()
+
+* Returns a new array with elements that pass a condition.
+
+```js
+const nums = [1, 2, 3, 4, 5];
+const evens = nums.filter(n => n % 2 === 0); // [2, 4]
+```
+
+---
+
+### 🔸 reduce()
+
+* Reduces array to a single value.
+
+```js
+const nums = [1, 2, 3, 4];
+const sum = nums.reduce((acc, curr) => acc + curr, 0); // 10
+```
+
+---
+
+### 🔸 find()
+
+* Returns the first element that matches the condition.
+
+```js
+const nums = [5, 12, 8, 130, 44];
+const found = nums.find(n => n > 10); // 12
+```
+
+---
+
+### 🔸 some()
+
+* Returns true if **at least one** element passes the test.
+
+```js
+[1, 2, 3].some(n => n > 2); // true
+```
+
+---
+
+### 🔸 every()
+
+* Returns true if **all** elements pass the test.
+
+```js
+[1, 2, 3].every(n => n > 0); // true
+```
+
+---
+
+### 🔸 includes()
+
+* Checks if array contains a value.
+
+```js
+[1, 2, 3].includes(2); // true
+```
+
+---
+
+### 🔸 sort()
+
+* Sorts the array (default is lexicographic).
+
+```js
+[1, 30, 4, 21].sort();              // [1, 21, 30, 4]
+[1, 30, 4, 21].sort((a, b) => a - b); // [1, 4, 21, 30]
+```
+
+---
+
+### 🔸 reverse()
+
+* Reverses the array in-place.
+
+```js
+[1, 2, 3].reverse(); // [3, 2, 1]
+```
+
+---
+
+### 🔸 flat()
+
+* Flattens nested arrays into a single level.
+
+```js
+[1, [2, 3], [4, 5]].flat(); // [1, 2, 3, 4, 5]
+```
+
+---
+
+### 🔸 flatMap()
+
+* First maps each element, then flattens the result.
+
+```js
+[1, 2, 3].flatMap(n => [n, n * 2]); // [1, 2, 2, 4, 3, 6]
+```
+
+---
+
+## 🧠 Functions
+
+### Function Declaration
+
+```js
+function greet(name) {
+  return "Hello " + name;
 }
-findIndexOf("Hi hello", "hello"); 
+```
 
-//two same stirngs, gives index of first word
-function findIndexOf(str, target) {
-  console.log("Original String:", str);
-  console.log("Index:", str.indexOf(target));
-}
-findIndexOf("Hi hello hello", "hello");
+### Function Expression
 
-//last index
-function findIndexOf(str, target) {
-  console.log("Original String:", str);
-  console.log("Index:", str.lastIndexOf(target));
-}
-findIndexOf("Hi hello how are you", "are"); 
+```js
+const greet = function(name) {
+  return "Hi " + name;
+};
+```
 
-// slice, gives a part of string
-function getSlice(str, start, end) {
-  console.log("Original String:", str);
-  console.log("After slice:", str.slice(start, end));
-}
-getSlice("Hello World", 0, 5);
+---
 
-// substring, number of string
-function getSubstring(str, start, end) {
-  console.log("Original String:", str);
-  console.log("After substring:", str.substring(start, end));
-}
-getSubstring("Hello World", 0, 8);
+## ⚡ Arrow Functions
 
-// split, has a delimeter like ",", "hi", " " , gives it into a array
-function splitString(str, separator) {
-  console.log("Original String:", str);
-  console.log("After split:", str.split(separator));
-}
-splitString("Hello World", " ");
+```js
+const add = (a, b) => a + b;
+const greet = name => `Hello ${name}`;
+```
 
-// trim, removes extra spaces
-function trimString(str) {
-  console.log("Original String:", str);
-  console.log("After trim:", str.trim());
-}
-trimString("                hi         Haniya konain              ");
+---
 
-// toUpperCase
-function toUpper(str) {
-  console.log("Original String:", str);
-  console.log("After toUpperCase:", str.toUpperCase());
-}
-toUpper("haniya");
+## 📦 JSON (JavaScript Object Notation)
 
-// toLowerCase
-function toLower(str) {
-  console.log("Original String:", str);
-  console.log("After toLowerCase:", str.toLowerCase());
-}
-toLower("Hi bye");
+```js
+const obj = { name: "Ali", age: 25 };
+const jsonStr = JSON.stringify(obj); // Convert object → string
+const parsed = JSON.parse(jsonStr);  // Convert string → object
+```
 
-///////////////NUMBERS
-//parseInnt and parseFloat are global functions, convert string to integer by removing extras like char or float from integer, if there are charcters in front and end and integers in middle it gives NAN
-console.log(parseInt("42hhh"));
-console.log(parseInt("123px"));
-console.log(parseInt("3.14"));
-//it allows decimal also
-console.log(parseFloat("3k"));
-console.log(parseFloat("3.14"));
+---
 
-///////////////ARRAYS
+## 🧮 Math Methods
 
-//push adds elements at end of array
-function pushExample(arr, element) {
-  console.log("Original Array:", arr);
+* `Math.floor(4.7)` → 4
+* `Math.ceil(4.3)` → 5
+* `Math.round(4.5)` → 5
+* `Math.max(10, 20)` → 20
+* `Math.min(10, 20)` → 10
+* `Math.random()` → 0 to <1
 
-  arr.push(element);
-  console.log("After push:", arr);
-}
-pushExample([1, 2, 3], 4);
+---
 
-// pop removes elements at end of array
-function popExample(arr) {
-  console.log("Original Array:", arr);
 
-  arr.pop();
-  console.log("After pop:", arr);
-}
-popExample([1, 2, 3]);
+## 🧾 JavaScript Objects & Methods
 
-// shift, it pop elements from front of array
-function shiftExample(arr) {
-  console.log("Original Array:", arr);
+### 🔸 Object Methods
 
-  arr.shift();
-  console.log("After shift:", arr);
-}
-shiftExample([1, 2, 3]);
-
-// unshift it push elements from front of array
-function unshiftExample(arr, element) {
-  console.log("Original Array:", arr);
-
-  arr.unshift(element);
-  console.log("After unshift:", arr);
-}
-unshiftExample([1, 2, 3], 0);
-
-// concat merge 2 arrays
-function concatExample(arr1, arr2) {
-  console.log("Original Arrays:", arr1, arr2);
-
-  let arr3 = arr1.concat(arr2);
-  console.log("After concat:", arr3);
-}
-concatExample([1, 2, 3], [4, 5, 6]);
-
-// forEach, log in new line
-function forEachExample(arr) {
-  console.log("Original Array:", arr);
-
-  arr.forEach(function(item, index) {
-    console.log(item, index);
-  });
-}
-forEachExample([1, 2, 3]);
-
-//LEVEL 2
-/////////////////////////CLASSES
-//blueprint, group of same thing for reusibility, has attributes and functions
-lass Animal {
-  constructor(name, legCount) {
-    this.name = name
-    this.legCount = legCount
-  }
-  describe() {
-    return `${this.name} has ${this.legCount} legs`
-  }
-}
-// static function can be called without creating objects, not associated to objects, can be calles directly
-  static speak() {
-    return "Animal can speak";
-  }
-
-//////////////////DATE
-//print current time and how muuch time a program runned
-function dateMethods() {
-  const currentDate = new Date();
-  console.log("Current Date:", currentDate);
-
-  // Getting various components of the date
-  console.log("Date:", currentDate.getDate());
-  console.log("Month:", currentDate.getMonth() + 1); // Months are zero-indexed, so adding 1
-  console.log("Year:", currentDate.getFullYear());
-  console.log("Hours:", currentDate.getHours());
-  console.log("Minutes:", currentDate.getMinutes());
-  console.log("Seconds:", currentDate.getSeconds());
-
-  // Setting components of the date
-  currentDate.setFullYear(2022);
-  console.log("After setFullYear:", currentDate);
-
-  currentDate.setMonth(5); // Setting month to June (zero-indexed)
-  console.log("After setMonth:", currentDate);
-
-  // Getting and setting time in milliseconds since 1970
-  console.log("Time in milliseconds since 1970:", currentDate.getTime());
-
-  const newDate = new Date(2023, 8, 15); // Creating a new date
-  console.log("New Date:", newDate);
-}
-
-// Example Usage for Date Methods
-dateMethods();
-
-///////////////////JSON JAVASCRIPT OBJECT NOTATION 
-//Send data somewhere, object to string and vice versa
-function jsonMethods(jsonString) {
-  console.log("Original JSON String:", jsonString);
-
-  // Parsing JSON string to JavaScript object
-  let parsedObject = JSON.parse(jsonString);
-  console.log("After JSON.parse():", parsedObject);
-
-  // Stringifying JavaScript object to JSON string, key should have ""
-  let jsonStringified = JSON.stringify(parsedObject);
-  console.log("After JSON.stringify():", jsonStringified);
-}
-
-// Example Usage for JSON Methods
-const sampleJSONString =
-  '{"key": "value", "number": 42, "nested": {"nestedKey": "nestedValue"}}';
-
-jsonMethods(sampleJSONString);
-
-////////////////////////MATH 
-function mathMethods(value) {
-  console.log("Original Value:", value);
-
-  let rounded = Math.round(value);
-  console.log("After round():", rounded);
-
-  let ceiling = Math.ceil(value);
-  console.log("After ceil():", ceiling);
-
-  let flooring = Math.floor(value);
-  console.log("After floor():", flooring);
-
-  let randomValue = Math.random();
-  console.log("After random():", randomValue);
-
-  let maxValue = Math.max(5, 10, 15);
-  console.log("After max():", maxValue);
-
-  let minValue = Math.min(5, 10, 15);
-  console.log("After min():", minValue);
-
-  let powerOfTwo = Math.pow(value, 2);
-  console.log("After pow():", powerOfTwo);
-
-  let squareRoot = Math.sqrt(value);
-  console.log("After sqrt():", squareRoot);
-}
-
-// Example Usage for Math Methods
-mathMethods(4.56);
-mathMethods(9);
-mathMethods(25);
-
-//////////////////////////OBJECTS
-// Object Methods object.keys gives array, it is a string
+```js
+function objectMethods(obj) {
   console.log("Original Object:", obj);
 
   let keys = Object.keys(obj);
-  console.log("After Object.keys():", keys);
+  console.log("After Object.keys():", keys); // [ 'key1', 'key2', 'key3' ]
 
   let values = Object.values(obj);
-  console.log("After Object.values():", values);
-  
-//entries, first index is key second is value
-  let entries = Object.entries(obj);
-  console.log("After Object.entries():", entries);
+  console.log("After Object.values():", values); // [ 'value1', 'value2', 'value3' ]
 
-//has own property prints true or false
+  let entries = Object.entries(obj);
+  console.log("After Object.entries():", entries); // [ [ 'key1', 'value1' ], ... ]
+
   let hasProp = obj.hasOwnProperty("property");
-  console.log("After hasOwnProperty():", hasProp);
+  console.log("After hasOwnProperty():", hasProp); // false
 
   let newObj = Object.assign({}, obj, { newProperty: "newValue" });
   console.log("After Object.assign():", newObj);
-
 }
 
-// Example Usage for Object Methods
 const sampleObject = {
   key1: "value1",
   key2: "value2",
@@ -320,68 +267,102 @@ const sampleObject = {
 };
 
 objectMethods(sampleObject);
+````
 
+---
 
-day4
+## ⏱️ setTimeout Example
+
+```js
 function findSum(n) {
-let ans= 0;
-for (i = 0; i < n; i++) {
-ans += i;
+  let ans = 0;
+  for (let i = 0; i < n; i++) {
+    ans += i;
+  }
+  return ans;
 }
-return ans;
-}
+
 function findSumTill100() {
-console.log(findSum(100));
+  console.log(findSum(100));
 }
-//waiting
 
-setTimeout(findSumTill100, 1000)
-console.log("hii");*/
+setTimeout(findSumTill100, 1000);
+console.log("hii");
+```
 
-const fs= require("fs");
-fs.readFile("a.txt", "utf-8", function(err, data) {
+---
+
+## 📁 File Read Example (Node.js)
+
+```js
+const fs = require("fs");
+
+fs.readFile("a.txt", "utf-8", function (err, data) {
   console.log(data);
-})
+});
+
 console.log("hi, hello");
-let a= 0;
+
+let a = 0;
 for (let i = 0; i < 10000000; i++) {
   a++;
 }
+
 console.log("hi bye");
+```
 
-    function findSum(n){
-let ans= 0;
-fot(i=0; i<n; i++)
-ans +- i;
+---
+
+## ⚠️ Syntax Error Fix (findSum example)
+
+```js
+function findSum(n) {
+  let ans = 0;
+  for (let i = 0; i < n; i++) {
+    ans += i;
+  }
+  return ans;
 }
-return ans;
+
+function findSumTill100() {
+  console.log(findSum(100));
 }
-function findSumTill100(){
-console.log(findSum(100));
-}
-//waiting
 
-setTimeout  (findSumTill100, 1000)
-console.log("hii");    
+setTimeout(findSumTill100, 1000);
+console.log("hii");
+```
 
+---
 
-// Arrow function<br>
-const add = (a, b) => a + b;<br>
+## 🔼 Arrow Functions
 
-<h2>map()</h2>
-it transforms array<br>
-global function on array class <br><br>
-1) initial array (arr) <br>
-2) transformation function (f) <br>
-3) map (arr, f) <br>
-4)gives final output <br><br>
-Creates a new array with the results of calling a provided<br> function on every element in the array.<br>
-Does not change the original array.<br>
+```js
+const add = (a, b) => a + b;
+```
 
+---
 
-<h2>filter()</h2>
-it transforms array<br>
-global function on array class <br>
-input can be anything number or character or string <br><br>
-Creates a new array with all elements that pass the test<br> implemented by the provided function.<br>
-The callback function should return true to keep the element, <br>or false to discard it.<br>
+## 🔄 Array Methods
+
+### 🧭 `map()` Method
+
+* Transforms every element in the array using a function.
+* Does not mutate the original array.
+
+```js
+const nums = [1, 2, 3];
+const squares = nums.map(n => n * n); // [1, 4, 9]
+```
+
+---
+
+### 🧹 `filter()` Method
+
+* Filters out elements based on a condition (returns `true` or `false`).
+* Creates a new array with elements that pass the condition.
+
+```js
+const nums = [1, 2, 3, 4, 5];
+const even = nums.filter(n => n % 2 === 0); // [2, 4]
+```
+
